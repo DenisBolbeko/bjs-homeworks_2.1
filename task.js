@@ -38,7 +38,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
    percent = percent / 1200; // Процентная ставка
    let monthlyPay = amount*(percent+percent/(((1+percent)**date)-1)); // Ежемесячная оплата
    let  totalAmount = monthlyPay * date;  //  общая сумма, которую придется заплатить клиенту.
-   console.log(totalAmount);
+   console.log(totalAmount.toFixed(2));
    return totalAmount.toFixed(2); //  Возврат результата в функцию
 }
 
@@ -56,7 +56,7 @@ function getGreeting(name) {
   if (onlyRusString.test(name) || name === "") {
     greeting = `Привет, мир! Меня зовут Аноним.`;
     console.log(greeting);
-    return greeting = `Привет, мир! Меня зовут Аноним.`;
+    return greeting;
   } else  {
       greeting = `Привет, мир! Меня зовут ${name}.`;
       console.log(greeting);
