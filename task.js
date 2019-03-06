@@ -53,7 +53,7 @@ function getGreeting(name) {
   let greeting = '';
   let onlyRusString = /[^а-яА-ЯёЁ\-\s]/; //  Переменная для ввода только кириллицы
   // Проверка введенных данных
-  if (onlyRusString.test(name) || name === "") {
+  if (onlyRusString.test(name) || name === "" || typeof(name) == 'undefined' || name == null) {
     greeting = `Привет, мир! Меня зовут Аноним.`;
     console.log(greeting);
     return greeting;
