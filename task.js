@@ -32,8 +32,8 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
    // Расчет количества месяцев, на которые оформляется ипотека. 
    let currentDate  = new Date();  // Дата с какого числа берется ипотеки 
    date = new Date(window.date.value); //Дата до какого числа берется ипотека
-   let payPeriod = date.getFullYear() - currentDate.getFullYear();
-   date = payPeriod * 12; // Количество месяцев, на которые оформляется ипотека.
+   let payPeriod = 0 - ((currentDate.getFullYear() -  date.getFullYear()) * 12) - (currentDate.getMonth() - date.getMonth());
+   date = payPeriod; // Количество месяцев, на которые оформляется ипотека.
    let returnAmount = amount - contribution  // Сумма, которую необходимо вернуть банку. 
    percent = percent / 1200; // Процентная ставка
    let monthlyPay = amount*(percent+percent/(((1+percent)**date)-1)); // Ежемесячная оплата
